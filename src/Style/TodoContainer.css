@@ -1,0 +1,117 @@
+body {
+    background-color: purple;
+    font-family: Arial, sans-serif; /* Added a fallback font */
+    height: 100vh;
+    margin: 0; /* Ensure no default margin */
+    position: relative; /* Removed duplicate `position: relative` */
+    display: flex; /* Center container vertically and horizontally */
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    width: 600px;
+    background: rgba(93, 0, 255, 0.83); /* Adjusted color transparency */
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px; /* Added padding for inner spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added subtle shadow for depth */
+    margin-top: 150px;
+}
+
+.container h1 {
+    text-align: center;
+    margin: 0 0 20px; /* Added spacing below the title */
+}
+
+.input-container {
+    display: flex;
+     /* Replaced padding with gap for better alignment */
+    margin-bottom: 20px; /* Space below the input section */
+    gap: 10px;
+}
+
+.content {
+    position: relative;
+}
+
+input[type="text"] {
+    flex: 1; /* Ensure the text input stretches to fill available space */
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 12px; /* Adjusted padding for better spacing */
+    font-size: 16px; /* Reduced font size for a cleaner look */
+    border-radius: 5px;
+    outline: none; /* Removes focus outline */
+}
+
+input::placeholder {
+    color: #c0c0c0;
+    font-weight: 700;
+    font-size: 16px; /* Match input text size */
+}
+
+input[type="submit"] {
+    background: purple;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #fff; /* Ensure submit button has consistent styling */
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background: #5d00ff;
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+.text ul {
+    list-style: none;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.text li {
+    margin-bottom: 15px; /* Adjusted spacing between list items */
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(212, 0, 255, 0.9); /* Softer background */
+    padding: 0px 15px;
+    transition: background 0.3s;
+}
+
+.text li:hover {
+    background-color: rgba(212, 0, 255, 0.7); /* Softer background */
+    /* Subtle hover effect for list items */
+}
+
+.fa-trash {
+    cursor: pointer;
+    text-align: end;
+    position: absolute;
+    right: 30px;
+    top: 30%;
+    
+}
+
+li {
+    display: flex;
+    position: relative;
+    
+}
+
+.uncompleted {
+    text-decoration: none;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+li p {
+    cursor: pointer;
+}
