@@ -1,117 +1,140 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 body {
-    background-color: purple;
-    font-family: Arial, sans-serif; /* Added a fallback font */
-    height: 100vh;
-    margin: 0; /* Ensure no default margin */
-    position: relative; /* Removed duplicate `position: relative` */
-    display: flex; /* Center container vertically and horizontally */
+    background: linear-gradient(45deg, #00b894, #00cec9, #0984e3, #6c5ce7); 
+    background-size: 400% 400%; 
+    animation: gradientAnimation 15s ease infinite; 
+    font-family: 'Roboto', sans-serif; 
+    margin: 0;
+    padding: 0;
+    display: flex;
     justify-content: center;
-    position: relative;
+    align-items: center;
+    height: 100vh;
 }
+
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 .container {
-    width: 600px;
-    background: rgba(93, 0, 255, 0.83); /* Adjusted color transparency */
-    color: #fff;
-    border-radius: 10px;
-    padding: 20px; /* Added padding for inner spacing */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added subtle shadow for depth */
-    margin-top: 150px;
+    width: 420px;
+    background: #ffffff; 
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    text-align: center;
 }
 
+
 .container h1 {
-    text-align: center;
-    margin: 0 0 20px; /* Added spacing below the title */
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #2d3436; 
+    font-weight: 700;
+    letter-spacing: 1.5px;
 }
+
 
 .input-container {
     display: flex;
-     /* Replaced padding with gap for better alignment */
-    margin-bottom: 20px; /* Space below the input section */
-    gap: 10px;
-}
-
-.content {
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 input[type="text"] {
-    flex: 1; /* Ensure the text input stretches to fill available space */
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 10px 12px; /* Adjusted padding for better spacing */
-    font-size: 16px; /* Reduced font size for a cleaner look */
-    border-radius: 5px;
-    outline: none; /* Removes focus outline */
+    width: 70%;
+    padding: 14px 20px;
+    font-size: 18px;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border 0.3s ease, background-color 0.3s ease;
 }
 
-input::placeholder {
-    color: #c0c0c0;
-    font-weight: 700;
-    font-size: 16px; /* Match input text size */
+input[type="text"]:focus {
+    border-color: #00cec9; 
+    background-color: #ffffff;
 }
 
 input[type="submit"] {
-    background: purple;
-    color: #fff;
+    width: 25%;
+    padding: 14px;
+    background-color: #6c5ce7; 
+    color: white;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    border: 1px solid #fff; /* Ensure submit button has consistent styling */
-    padding: 10px 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.2s;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-weight: 700;
 }
 
 input[type="submit"]:hover {
-    background: #5d00ff;
-    transform: scale(1.05); /* Subtle hover effect */
+    background-color: #a29bfe; 
+    transform: scale(1.05);
 }
+
 
 .text ul {
     list-style: none;
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    padding: 0;
+    margin: 0;
 }
 
 .text li {
-    margin-bottom: 15px; /* Adjusted spacing between list items */
-    border-radius: 5px;
-    font-weight: bold;
-    color: #fff;
-    background-color: rgba(212, 0, 255, 0.9); /* Softer background */
-    padding: 0px 15px;
-    transition: background 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    padding: 15px 25px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: #2d3436;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .text li:hover {
-    background-color: rgba(212, 0, 255, 0.7); /* Softer background */
-    /* Subtle hover effect for list items */
+    background-color: #ffeaa7; 
+    transform: translateY(-5px);
+}
+
+.text li.completed {
+    text-decoration: line-through;
+    color: #636e72;
 }
 
 .fa-trash {
     cursor: pointer;
-    text-align: end;
-    position: absolute;
-    right: 30px;
-    top: 30%;
-    
+    font-size: 20px;
+    color: #d63031; 
+    transition: color 0.3s ease;
 }
 
-li {
-    display: flex;
-    position: relative;
-    
+.fa-trash:hover {
+    color: #e74c3c; 
 }
 
-.uncompleted {
-    text-decoration: none;
-}
+/* responsiveness */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
 
-.completed {
-    text-decoration: line-through;
-}
+    input[type="text"] {
+        width: 60%;
+    }
 
-li p {
-    cursor: pointer;
+    input[type="submit"] {
+        width: 35%;
+    }
 }
